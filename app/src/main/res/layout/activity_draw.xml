@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.catchapp.catchapp.ui.draw.DrawView.PaintType" />
+
+        <variable
+            name="vm"
+            type="com.catchapp.catchapp.ui.draw.DrawViewModel" />
+    </data>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="false">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/space_4dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/toolbar_height_56dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/space_8dp"
+                        android:foreground="?attr/actionBarItemBackground"
+                        android:padding="@dimen/space_8dp"
+                        android:src="@drawable/ic_arrow_back"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceHeadline6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="CATCH 하기"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_back"
+                        app:layout_constraintStart_toEndOf="@id/iv_back"
+                        app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_help"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/space_12dp"
+                        android:adjustViewBounds="true"
+                        android:alpha="0.8"
+                        android:foreground="@drawable/ripple_circle_button"
+                        android:padding="@dimen/space_6dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_help" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/space_28dp"
+                app:layout_constraintBottom_toTopOf="@id/iv_done"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/app_bar" />
+
+            <com.catchapp.catchapp.ui.draw.DrawView
+                android:id="@+id/draw_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_image"
+                app:layout_constraintEnd_toEndOf="@id/iv_image"
+                app:layout_constraintStart_toStartOf="@id/iv_image"
+                app:layout_constraintTop_toTopOf="@id/iv_image" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_undo"
+                android:layout_width="@dimen/button_size_36dp"
+                android:layout_height="@dimen/button_size_36dp"
+                android:layout_margin="@dimen/space_12dp"
+                android:background="@drawable/shape_circle_white"
+                android:elevation="@dimen/space_2dp"
+                android:foreground="@drawable/ripple_circle_button"
+                android:padding="@dimen/space_6dp"
+                android:src="@drawable/selector_undo"
+                app:layout_constraintBottom_toBottomOf="@id/iv_done"
+                app:layout_constraintEnd_toStartOf="@id/iv_redo"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_done" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_undo"
+                style="?attr/textAppearanceCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_4dp"
+                android:text="취소"
+                android:textColor="@drawable/selector_drawing_control_color"
+                app:layout_constraintEnd_toEndOf="@id/iv_undo"
+                app:layout_constraintStart_toStartOf="@id/iv_undo"
+                app:layout_constraintTop_toBottomOf="@id/iv_undo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_redo"
+                android:layout_width="@dimen/button_size_36dp"
+                android:layout_height="@dimen/button_size_36dp"
+                android:layout_marginStart="@dimen/space_12dp"
+                android:layout_marginEnd="@dimen/space_28dp"
+                android:background="@drawable/shape_circle_white"
+                android:elevation="@dimen/space_2dp"
+                android:foreground="@drawable/ripple_circle_button"
+                android:padding="@dimen/space_6dp"
+                android:src="@drawable/selector_redo"
+                app:layout_constraintBottom_toBottomOf="@id/iv_done"
+                app:layout_constraintEnd_toStartOf="@id/iv_done"
+                app:layout_constraintStart_toEndOf="@id/iv_undo"
+                app:layout_constraintTop_toTopOf="@id/iv_done" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_redo"
+                style="?attr/textAppearanceCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_4dp"
+                android:text="되돌리기"
+                android:textColor="@drawable/selector_drawing_control_color"
+                app:layout_constraintEnd_toEndOf="@id/iv_redo"
+                app:layout_constraintStart_toStartOf="@id/iv_redo"
+                app:layout_constraintTop_toBottomOf="@id/iv_redo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_done"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_margin="48dp"
+                android:background="@drawable/shape_circle_catch_main"
+                android:elevation="2dp"
+                android:foreground="@drawable/ripple_circle_button_dark"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_send_24px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_done"
+                style="?attr/textAppearanceOverline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_8dp"
+                android:text="@string/app_name_eng"
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="@id/iv_done"
+                app:layout_constraintStart_toStartOf="@id/iv_done"
+                app:layout_constraintTop_toBottomOf="@id/iv_done" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_stroke"
+                android:layout_width="@dimen/button_size_36dp"
+                android:layout_height="@dimen/button_size_36dp"
+                android:layout_marginStart="@dimen/space_28dp"
+                android:layout_marginEnd="@dimen/space_12dp"
+                android:background="@drawable/shape_circle_white"
+                android:elevation="@dimen/space_2dp"
+                android:foreground="@drawable/ripple_circle_button"
+                android:padding="@dimen/space_6dp"
+                android:src="@drawable/ic_draw"
+                app:layout_constraintBottom_toBottomOf="@id/iv_done"
+                app:layout_constraintEnd_toStartOf="@id/iv_type"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/iv_done"
+                app:layout_constraintTop_toTopOf="@id/iv_done" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_settings"
+                style="?attr/textAppearanceCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_4dp"
+                android:text="두께"
+                app:layout_constraintEnd_toEndOf="@id/iv_stroke"
+                app:layout_constraintStart_toStartOf="@id/iv_stroke"
+                app:layout_constraintTop_toBottomOf="@id/iv_stroke" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_type"
+                android:layout_width="@dimen/button_size_36dp"
+                android:layout_height="@dimen/button_size_36dp"
+                android:layout_margin="@dimen/space_12dp"
+                android:background="@drawable/shape_circle_white"
+                android:elevation="@dimen/space_2dp"
+                android:foreground="@drawable/ripple_circle_button"
+                android:padding="@dimen/space_8dp"
+                android:src="@drawable/selector_pen"
+                android:tint="@color/colorSkyBlue"
+                app:layout_constraintBottom_toBottomOf="@id/iv_done"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_stroke"
+                app:layout_constraintTop_toTopOf="@id/iv_done"
+                app:selected="@{vm.paintType == PaintType.PEN}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_type"
+                style="?attr/textAppearanceCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_4dp"
+                android:text="@{vm.paintType == PaintType.PEN ? @string/paint_type_pen : @string/paint_type_eraser}"
+                app:layout_constraintEnd_toEndOf="@id/iv_type"
+                app:layout_constraintStart_toStartOf="@id/iv_type"
+                app:layout_constraintTop_toBottomOf="@id/iv_type" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{true == vm.loading}" />
+
+    </FrameLayout>
+</layout>

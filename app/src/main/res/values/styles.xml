@@ -1,0 +1,112 @@
+<resources>
+
+    <style name="LaunchTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="android:immersive">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowBackground">@drawable/catch_bg</item>
+    </style>
+
+    <style name="AppMainTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <!-- colors -->
+
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorWhiteDefault</item>
+        <item name="colorPrimaryVariant">@color/colorWhite</item>
+
+        <item name="colorSecondary">@color/colorSkyBlue</item>
+        <item name="colorSecondaryVariant">@color/colorWhite</item>
+
+        <item name="colorSurface">@color/colorWhite</item>
+        <!--<item name="colorOnSurface">@color/colorDark</item>-->
+        <item name="colorAccent">@color/colorSkyBlue</item>
+        <!--<item name="colorOnAccent">@color/colorWhite</item>-->
+        <item name="colorError">@color/colorPink</item>
+        <!--<item name="colorOnError">@color/colorWhite</item>-->
+
+        <item name="rippleColor">@color/colorGrayLight</item>
+
+        <item name="android:windowBackground">@color/colorWhite</item>
+
+        <item name="android:textColorPrimary">@color/colorBlackDefault</item>
+        <item name="android:textColor">@color/colorBlackDefault</item>
+
+        <!-- transitions -->
+
+        <item name="android:windowAnimationStyle">@style/WindowAnimationStyle</item>
+        <item name="android:windowActivityTransitions">true</item>
+
+        <!-- fonts -->
+
+        <item name="fontFamily">@font/font_normal</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+        <item name="android:includeFontPadding">false</item>
+
+        <item name="textAppearanceHeadline1">@style/TextHeadline1</item>
+        <item name="textAppearanceHeadline2">@style/TextHeadline2</item>
+        <item name="textAppearanceHeadline3">@style/TextHeadline3</item>
+        <item name="textAppearanceHeadline4">@style/TextHeadline4</item>
+        <item name="textAppearanceHeadline5">@style/TextHeadline5</item>
+        <item name="textAppearanceHeadline6">@style/TextHeadline6</item>
+
+        <item name="textAppearanceSubtitle1">@style/TextSubtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextSubtitle2</item>
+
+        <item name="textAppearanceBody1">@style/TextBody1</item>
+        <item name="textAppearanceBody2">@style/TextBody2</item>
+
+        <item name="textAppearanceCaption">@style/TextCaption</item>
+        <item name="textAppearanceButton">@style/TextButton</item>
+        <item name="textAppearanceOverline">@style/TextOverline</item>
+
+        <item name="recyclerViewStyle">@style/RecyclerViewStyle</item>
+    </style>
+
+
+    <!-- system ui (status bar / navigation bar) 모두 숨김 -->
+
+    <style name="FullScreenTheme" parent="AppMainTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:immersive">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+    <!-- system ui (status bar / navigation bar) 투명하게 -->
+
+    <style name="TranslucentTheme" parent="FullScreenTheme">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:immersive">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="TranslucentTheme.Background" parent="TranslucentTheme">
+        <item name="android:windowBackground">@drawable/catch_bg</item>
+    </style>
+
+
+    <!-- image button -->
+
+
+    <!-- recycler view -->
+
+    <style name="RecyclerViewStyle">
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+
+    <!-- Animation -->
+
+    <style name="WindowAnimationStyle">
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+        <item name="android:windowExitTransition">@android:transition/fade</item>
+        <item name="android:windowReturnTransition">@android:transition/fade</item>
+        <item name="android:windowReenterTransition">@android:transition/fade</item>
+    </style>
+</resources>

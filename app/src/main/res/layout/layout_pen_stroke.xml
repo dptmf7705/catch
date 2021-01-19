@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.catchapp.catchapp.ui.draw.DrawViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/space_8dp"
+        android:paddingEnd="@dimen/space_8dp">
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:max="70"
+            android:min="5"
+            android:progress="@={vm.paintWidth}"
+            android:progressBackgroundTint="@color/colorWhiteDefault"
+            android:progressTint="@color/colorWhiteDefault"
+            android:thumb="@drawable/shape_thumb"
+            tools:ignore="UnusedAttribute" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motion_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/splash_motion_scene">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_app"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_splash" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tv_app"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_catch_wordmark_splash" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

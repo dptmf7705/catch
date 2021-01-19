@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.catchapp.catchapp.ui.draw.DrawViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/space_8dp"
+        android:paddingEnd="@dimen/space_8dp"
+        android:paddingBottom="@dimen/space_4dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_draw"
+            android:layout_width="@dimen/button_size_32dp"
+            android:layout_height="@dimen/button_size_32dp"
+            android:layout_margin="@dimen/space_12dp"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/space_2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_pen"
+            android:tint="@color/colorWhite"
+            app:layout_constraintEnd_toStartOf="@id/iv_eraser"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_draw"
+            style="?attr/textAppearanceCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_4dp"
+            android:text="@string/paint_type_pen"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/iv_draw"
+            app:layout_constraintStart_toStartOf="@id/iv_draw"
+            app:layout_constraintTop_toBottomOf="@id/iv_draw" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_eraser"
+            android:layout_width="@dimen/button_size_32dp"
+            android:layout_height="@dimen/button_size_32dp"
+            android:layout_margin="@dimen/space_12dp"
+            android:padding="@dimen/space_2dp"
+            android:src="@drawable/ic_eraser"
+            android:tint="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_draw"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_eraser"
+            style="?attr/textAppearanceCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_4dp"
+            android:text="@string/paint_type_eraser"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/iv_eraser"
+            app:layout_constraintStart_toStartOf="@id/iv_eraser"
+            app:layout_constraintTop_toBottomOf="@id/iv_eraser" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

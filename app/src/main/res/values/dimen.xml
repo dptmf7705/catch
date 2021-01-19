@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- margin/padding -->
+    <dimen name="space_2dp">2dp</dimen>
+    <dimen name="space_4dp">4dp</dimen>
+    <dimen name="space_6dp">6dp</dimen>
+    <dimen name="space_8dp">8dp</dimen>
+    <dimen name="space_12dp">12dp</dimen>
+    <dimen name="space_16dp">16dp</dimen>
+    <dimen name="space_18dp">18dp</dimen>
+    <dimen name="space_24dp">24dp</dimen>
+    <dimen name="space_28dp">28dp</dimen>
+    <dimen name="space_32dp">32dp</dimen>
+
+    <!-- button size -->
+    <dimen name="button_size_32dp">32dp</dimen>
+    <dimen name="button_size_36dp">36dp</dimen>
+    <dimen name="button_size_40dp">40dp</dimen>
+    <dimen name="button_size_48dp">48dp</dimen>
+
+    <!-- text size -->
+    <dimen name="text_size_10sp">10sp</dimen>
+    <dimen name="text_size_11sp">11sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_13sp">13sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_15sp">15sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_24sp">24sp</dimen>
+    <dimen name="text_size_32sp">32sp</dimen>
+
+    <!-- toolbar size -->
+    <dimen name="toolbar_height_56dp">56dp</dimen>
+
+</resources>

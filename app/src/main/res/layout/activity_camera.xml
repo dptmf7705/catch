@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/black">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/view_finder"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/iv_capture"
+            app:layout_constraintDimensionRatio="0.75"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_capture"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_margin="56dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/shape_circle_catch_main"
+            android:elevation="2dp"
+            android:foreground="@drawable/ripple_circle_button_dark"
+            android:padding="12dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_send_24px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_finder" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/iv_album"
+            style="?attr/textAppearanceCaption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_16dp"
+            android:drawableTop="@drawable/ic_album_white_28dp"
+            android:drawablePadding="@dimen/space_2dp"
+            android:foreground="@drawable/ripple_circle_button"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/space_6dp"
+            android:text="앨범"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@id/iv_capture"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/iv_flip"
+            style="?attr/textAppearanceCaption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_16dp"
+            android:drawableTop="@drawable/ic_flip_camera_28dp"
+            android:drawablePadding="@dimen/space_2dp"
+            android:foreground="@drawable/ripple_circle_button"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/space_6dp"
+            android:text="전환"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@id/iv_capture"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

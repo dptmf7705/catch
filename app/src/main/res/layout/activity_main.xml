@@ -7,11 +7,11 @@
 
         <variable
             name="mainVm"
-            type="com.catchapp.catchapp.ui.main.MainViewModel" />
+            type="com.catchday.catchapp.ui.main.MainViewModel" />
 
         <variable
             name="noticeVm"
-            type="com.catchapp.catchapp.ui.main.notice.NoticeViewModel" />
+            type="com.catchday.catchapp.ui.main.notice.NoticeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +28,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.catchapp.catchapp.widget.PagerRecyclerView
+        <com.catchday.catchapp.widget.PagerRecyclerView
             android:id="@+id/rv_feed"
             android:layout_width="match_parent"
             android:layout_height="360dp"

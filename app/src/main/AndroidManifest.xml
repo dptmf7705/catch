@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.catchapp.catchapp">
+    package="com.catchday.catchapp">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -21,6 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppMainTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity
             android:name=".ui.launch.LaunchActivity"
             android:theme="@style/LaunchTheme">
@@ -41,12 +42,5 @@
         <activity
             android:name=".ui.camera.CameraActivity"
             android:theme="@style/FullScreenTheme" />
-
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_catch_logo_24px" />
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/colorSkyBlue" />
     </application>
 </manifest>

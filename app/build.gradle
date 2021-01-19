@@ -9,7 +9,7 @@ project.ext.ASSET_DIR = projectDir.toString() + '/src/main/assets'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.catchapp.catchapp"
+        applicationId "com.catchday.catchapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="com.catchapp.catchapp.ui.draw.DrawViewModel" />
+            type="com.catchday.catchapp.ui.draw.DrawViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat

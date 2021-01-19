@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="com.catchapp.catchapp.ui.main.notice.Notice" />
+            type="com.catchday.catchapp.ui.main.notice.Notice" />
     </data>
 
     <androidx.cardview.widget.CardView
